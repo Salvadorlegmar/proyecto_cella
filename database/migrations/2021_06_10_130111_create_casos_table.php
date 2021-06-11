@@ -16,7 +16,7 @@ class CreateCasosTable extends Migration
         Schema::create('casos', function (Blueprint $table) {
             $table->integer('ID_CASO')->unsigned();
             $table->primary('ID_CASO');
-            $table->string("Trazabilidad_hospital");
+            $table->string("Trazabilidad_hospital",100);
             $table->dateTime("Fecha/hora_de_alta");
         });
     }

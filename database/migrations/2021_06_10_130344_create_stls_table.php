@@ -18,8 +18,8 @@ class CreateStlsTable extends Migration
             $table->integer('ID_MODELO')->unsigned();
             $table->integer('ID_CASO')->unsigned();
             $table->primary(['ID_CASO','ID_MODELO','ID_STL']);
-            $table->string('Nombre_del_elemento');
-            $table->string('Color');
+            $table->string('Nombre_del_elemento', 50);
+            $table->string('Color',8);
             $table->boolean('Visible');
             $table->integer('Transparencia')->unsigned();
             $table->integer('Orden')->unsigned();

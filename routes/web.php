@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource("casos","CasoController");
+Route::resource("modelos","ModeloController");
+Route::resource("stls","StlController");

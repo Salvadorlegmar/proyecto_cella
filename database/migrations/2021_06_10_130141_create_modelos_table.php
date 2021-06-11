@@ -17,7 +17,7 @@ class CreateModelosTable extends Migration
             $table->integer('ID_MODELO')->unsigned();
             $table->integer('ID_CASO')->unsigned();
             $table->primary(['ID_CASO','ID_MODELO']);
-            $table->string('Nombre_del_modelo');
+            $table->string('Nombre_del_modelo',50);
             $table->enum('Tipo',['hepático','pancreático','colorrectal','tiroides','otro']);
             $table->dateTime("Fecha/hora_de_alta");
         });

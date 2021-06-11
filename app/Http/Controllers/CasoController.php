@@ -13,4 +13,9 @@ class CasoController extends Controller
         $casos = Caso::orderby('ID_CASO')->paginate();
         return view("caso", compact("casos"));
     }
+
+    public function delete()
+    {
+        # code...
+    }
 }

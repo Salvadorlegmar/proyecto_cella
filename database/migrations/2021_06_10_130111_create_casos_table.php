@@ -14,10 +14,9 @@ class CreateCasosTable extends Migration
     public function up()
     {
         Schema::create('casos', function (Blueprint $table) {
-            $table->integer('ID_CASO')->unsigned();
-            $table->primary('ID_CASO');
+            $table->increments('ID_CASO');
             $table->string("Trazabilidad_hospital",100);
-            $table->dateTime("Fecha/hora_de_alta");
+            $table->dateTime("Fecha_hora_de_alta");
         });
     }
 

@@ -14,12 +14,12 @@ class CreateModelosTable extends Migration
     public function up()
     {
         Schema::create('modelos', function (Blueprint $table) {
-            $table->integer('ID_MODELO')->unsigned();
+            $table->increments('ID_MODELO');
             $table->integer('ID_CASO')->unsigned();
-            $table->primary(['ID_CASO','ID_MODELO']);
+            /*$table->primary('ID_CASO');*/
             $table->string('Nombre_del_modelo',50);
             $table->enum('Tipo',['hepático','pancreático','colorrectal','tiroides','otro']);
-            $table->dateTime("Fecha/hora_de_alta");
+            $table->dateTime("Fecha_hora_de_alta");
         });
     }
 

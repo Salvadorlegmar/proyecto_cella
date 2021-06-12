@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('caso');
 });
 
-Route::resource("casos","CasoController");
-/*Route::resource("modelos","ModeloController");
-Route::resource("stls","StlController");*/
+Route::resource("casos","CasoController", ['except' => 'show']);
+Route::resource("modelos","ModeloController");
+Route::resource("stls","StlController");

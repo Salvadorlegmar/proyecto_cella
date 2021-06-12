@@ -10,10 +10,15 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
         <!-- Styles -->
-        
+        <style>
+            h2 > a{
+                position: absolute;
+                right:20%;
+            }
+        </style>
     </head>
     <body>
-        <div id="main" class="container">
+        <div class="container">
             
             @yield('content')
 

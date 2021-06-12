@@ -2,7 +2,50 @@
 @extends('app')
 
 @section('content')
-    Desde dashboard
+<div id="crud" class="row">
+    <div class="col-xs-12">
+        <h1 class="page-header text-center"> Ventana Casos </h1>
+    </div>
+
+    <div class="col-sm-7">
+        <h2>
+            Listado de Casos
+            <!--<a href="{{ route('casos.create') }}" class="btn btn-primary pull-right"> Nuevo Caso</a>-->
+        </h2>
+        <table class="table table-hover table-sprite">
+            <thead>
+                <tr>
+                    <th width="20px"> ID </th>
+                    <th>Trazabilidad</th>
+                    <th>Fecha Alta</th>
+                    <th>Modelos</th>
+                    <th colspan="2">
+                        &nbsp;    
+                    </th>
+                </tr>        
+            </thead>
+            <tbody>
+                <tr>
+	                <td width="10px">5</td>
+	                <td>Vamos</td>
+                    
+                    <td>2021-06-11 21:31:33</td>
+                    <td width="10px">
+                        <a href="#" class="btn btn-info">Listar</a>
+                    </td>
+                    <td width="10px">
+                        <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-5">
+        <div>
+            @{{ data }}
+        </div>
+    </div>
+</div>
 @endsection
 
 

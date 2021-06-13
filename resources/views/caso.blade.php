@@ -7,10 +7,12 @@
         <h1 class="page-header text-center"> Ventana Casos </h1>
     </div>
 
-    <div class="col-sm-7">
+    <div class="col-sm-12">
         <h2>
             Listado de Casos
-            <!--<a href="{{ route('casos.create') }}" class="btn btn-primary pull-right"> Nuevo Caso</a>-->
+            <a class="add btn btn-primary pull-right" data-toggle="modal" data-target="#addCaso">
+             Nuevo Caso
+            </a>
         </h2>
         <table class="table table-hover table-sprite">
             <thead>
@@ -25,26 +27,23 @@
                 </tr>        
             </thead>
             <tbody>
-                <tr>
-	                <td width="10px">5</td>
-	                <td>Vamos</td>
-                    
-                    <td>2021-06-11 21:31:33</td>
+                <tr v-for="caso in cases">
+	                <td width="10px">@{{ caso.ID_CASO }}</td>
+	                <td>@{{ caso.Trazabilidad_hospital }}</td>
+                    <td>@{{ caso.Fecha_hora_de_alta }}</td>
+
                     <td width="10px">
                         <a href="#" class="btn btn-info">Listar</a>
                     </td>
                     <td width="10px">
-                        <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
+                        <a href="#" class="btn btn-danger btn-sm" v-on:click="deleteCase(caso)">Eliminar</a>
                     </td>
                 </tr>
             </tbody>
         </table>
+        @include('addCaso')
     </div>
-    <div class="col-sm-5">
-        <div>
-            @{{ data }}
-        </div>
-    </div>
+    
 </div>
 @endsection
 

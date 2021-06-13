@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Stl;
 
 class StlController extends Controller
 {
@@ -13,7 +14,8 @@ class StlController extends Controller
      */
     public function index()
     {
-        //
+        $stls = Stl::get();
+        return $stls;
     }
 
     /**

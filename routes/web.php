@@ -13,8 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/listcasos', function () {
     return view('caso');
+});
+
+Route::get('/listmodelos', function () {
+    return view('modelo');
+});
+
+Route::get('/liststls', function () {
+    return view('stl');
 });
 
 Route::resource("casos","CasoController", ['except' => 'show']);

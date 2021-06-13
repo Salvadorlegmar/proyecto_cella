@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Modelo;
 
 class ModeloController extends Controller
 {
@@ -13,7 +14,8 @@ class ModeloController extends Controller
      */
     public function index()
     {
-        //
+        $modelos = Modelo::get();
+        return $modelos;
     }
 
     /**

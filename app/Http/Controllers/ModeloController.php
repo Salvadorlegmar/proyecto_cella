@@ -47,7 +47,10 @@ class ModeloController extends Controller
      */
     public function show($id)
     {
-        //
+        $modelos = Modelo::findOrFail($id);
+        return $modelos;
+
+        
     }
 
     /**

@@ -17,6 +17,7 @@ Route::get('/listcasos', function () {
     return view('caso');
 });
 
+
 Route::get('/listmodelos', function () {
     return view('modelo');
 });
@@ -25,6 +26,8 @@ Route::get('/liststls', function () {
     return view('stl');
 });
 
-Route::resource("casos","CasoController", ['except' => 'show']);
+
+
+Route::resource("casos","CasoController", ['except' => 'show','create','edit']);
 Route::resource("modelos","ModeloController");
 Route::resource("stls","StlController");

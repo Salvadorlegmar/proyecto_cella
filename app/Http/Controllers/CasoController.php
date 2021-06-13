@@ -23,10 +23,10 @@ class CasoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    /*public function create()
     {
         //
-    }
+    }*/
 
     /**
      * Store a newly created resource in storage.
@@ -36,7 +36,11 @@ class CasoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'Trazabilidad_hospital' => 'required',
+        ]);
+        Caso::create($request->all());
+        return;
     }
 
     /**
@@ -45,10 +49,10 @@ class CasoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    /*public function show($id)
     {
         //
-    }
+    }*/
 
     /**
      * Show the form for editing the specified resource.
@@ -56,12 +60,12 @@ class CasoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    /*public function edit($id)
     {
         $caso = Caso::findOrFail($id);
         //Formulario
         return $caso;
-    }
+    }*/
 
     /**
      * Update the specified resource in storage.
@@ -83,6 +87,7 @@ class CasoController extends Controller
      */
     public function destroy($id)
     {
+        echo 'ID VALE:'.$id;
         $caso = Caso::findOrFail($id);
         $caso->delete();
     }

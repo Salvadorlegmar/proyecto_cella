@@ -1,14 +1,15 @@
-
 new Vue({
     el: '#crud',
     data: {
         cases:[],
+        newTraza:'',
+        errors:[],
         models:[],
         stls:[]
     },
     created: function() {
         this.getCases();
-        this.getModels();
+        //this.getModels();
         this.getStls();
     },
     methods: {
@@ -27,9 +28,32 @@ new Vue({
                 toastr.success('Caso eliminado correctamente'); //mensaje           
             });
         },
-  
 
-        getModels: function(){
+        createCase: function() {
+            var url = 'casos'
+            var m = new Date();
+            var dateString = m.getUTCFullYear() +"/"+ (m.getUTCMonth()+1) +"/"+ m.getUTCDate() + " " + 
+            (m.getUTCHours()+2) + ":" + m.getUTCMinutes() + ":" + m.getUTCSeconds();
+            axios.post(url, {
+                Trazabilidad_hospital: this.newTraza,
+                Fecha_hora_de_alta: dateString
+            }).then(response => {
+                this.getCases();
+                this.newTraza = '';
+                this.errors = [];
+                $('#addcaso').modal('hide');
+                toastr.success('Nueva Caso creado con éxito');
+            }).catch(error => {
+                this.errors = 'Corrija para poder crear con éxito';
+            });
+        },
+  
+        loadModels: function(caso) {
+            var idCaso = caso.ID_CASO;
+            this.getModels(idCaso);
+        },
+
+        getModels: function(idCaso){
             var urlModels = 'modelos';
             axios.get(urlModels).then(response =>{
                 this.models = response.data

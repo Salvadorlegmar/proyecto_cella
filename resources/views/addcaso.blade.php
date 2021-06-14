@@ -11,7 +11,8 @@
             <div class="modal-body">
 
                 <label for="traza">Trazabilidad</label>
-                <input type="text" name="Trazabilidad_hospital" class="form-control" v-model="newTraza">                       <span v-for="error in errors" class="text-danger">@{{ error }}</span>
+                <input type="text" name="Trazabilidad_hospital" class="form-control" v-model="newTraza">                       
+                <span v-for="error in errors" class="text-danger">@{{ error }}</span>
                 <!--<span v-for="error in errors" class="text-danger">@{{ error }}</span>-->
             </div>
                 

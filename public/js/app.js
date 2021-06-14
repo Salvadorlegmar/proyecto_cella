@@ -27713,6 +27713,8 @@ new Vue({
     data: {
         cases:[],
         newTraza:'',
+        newName:'',
+        newTipo:'',
         errors:[],
         models:[],
         stls:[]

@@ -3,6 +3,8 @@ new Vue({
     data: {
         cases:[],
         newTraza:'',
+        newName:'',
+        newTipo:'',
         errors:[],
         models:[],
         stls:[]
@@ -66,6 +68,27 @@ new Vue({
             axios.delete(url).then(response => {
                 this.getModels();
                 toastr.success('Modelo eliminado correctamente'); //mensaje             
+            });
+        },
+
+        createModel: function() {
+            var url = 'modelos'
+            var m = new Date();
+            var dateString = m.getUTCFullYear() +"/"+ (m.getUTCMonth()+1) +"/"+ m.getUTCDate() + " " + 
+            (m.getUTCHours()+2) + ":" + m.getUTCMinutes() + ":" + m.getUTCSeconds();
+            axios.post(url, {
+                Nombre_del_modelo: this.newName,
+                Tipo: this.newTipo,
+                Fecha_hora_de_alta: dateString
+            }).then(response => {
+                this.getModels();
+                this.newName = '';
+                this.newTipo = '',
+                this.errors = [];
+                $('#addmodelo').modal('hide');
+                toastr.success('Nueva Modelo creado con éxito');
+            }).catch(error => {
+                this.errors = 'Corrija para poder crear con éxito';
             });
         },
 

@@ -9,7 +9,10 @@
     <div class="col-sm-12">
         <h2>
             Listado de Modelos
-            <a href="{{ route('modelos.create') }}" class="add btn btn-primary pull-right"> Nuevo Modelo</a>
+            <!--<a href="{{ route('modelos.create') }}" class="add btn btn-primary pull-right"> Nuevo Modelo</a>-->
+            <a href="#" class="add btn btn-primary pull-right" data-toggle="modal" data-target="#addmodelo"> 
+            Nuevo Modelo
+            </a>
         </h2>
         <table class="table table-hover table-sprite">
             <thead>
@@ -18,8 +21,8 @@
                     <th>Nombre</th>
                     <th>Fecha Alta</th>
                     <th>Tipo</th>
-                    <th colspan="2">
-                        &nbsp;    
+                    <th width="10px">
+                        Acción    
                     </th>
                 </tr>        
             </thead>
@@ -29,7 +32,6 @@
 	                <td>@{{ modelo.Nombre_del_modelo }}</td>
                     <td>@{{ modelo.Fecha_hora_de_alta }}</td>
                     <td>@{{ modelo.Tipo }}</td>
-
                     <td width="10px">
                         <a href="#" class="btn btn-danger btn-sm" v-on:click="deleteModel(modelo)">Eliminar</a>
                     </td>
@@ -37,6 +39,6 @@
             </tbody>
         </table>
     </div>
-    
+    @include('addmodelo')
 </div>
 @endsection

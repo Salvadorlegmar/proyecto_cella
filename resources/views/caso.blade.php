@@ -21,9 +21,8 @@
                     <th>Trazabilidad</th>
                     <th>Fecha Alta</th>
                     <th>Modelos</th>
-                    <th colspan="2">
-                        &nbsp;    
-                    </th>
+                    <th width="10px">Acción</th>
+                
                 </tr>        
             </thead>
             <tbody>
@@ -38,6 +37,7 @@
                     <td width="10px">
                         <a href="#" class="btn btn-danger btn-sm" v-on:click="deleteCase(caso)">Eliminar</a>
                     </td>
+
                 </tr>
             </tbody>
         </table>
